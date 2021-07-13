@@ -86,6 +86,23 @@ const name = (race, gender) => {
             return `${gnome_first_name_f[first_index]} "${gnome_nickname[nick_index]}" ${gnome_last_name[last_index]}`;
         }
     }
+
+    if (race === 'halfling') {
+        if (gender === 'male') {
+            const first_index = random_index(halfling_first_name_m.length - 1);
+            const last_index = random_index(halfling_last_name.length - 1);
+
+            return `${halfling_first_name_m[first_index]} ${halfling_last_name[last_index]}`;
+        }
+        if (gender === 'female') {
+            const first_index = random_index(halfling_first_name_f.length - 1);
+            const last_index = random_index(halfling_last_name.length - 1);
+
+            return `${halfling_first_name_f[first_index]} ${halfling_last_name[last_index]}`;
+        }
+    }
 };
+
+console.log(name('halfling', 'male'));
 
 module.exports = { name };
