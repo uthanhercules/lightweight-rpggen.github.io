@@ -1,8 +1,8 @@
 const { name } = require('../NameGenerator');
 const { capitalize, dice_roll } = require('../utilities');
-const { atribute_values, atributes_values } = require('../AtributeRoller');
+const { atributes_values } = require('../AtributeRoller');
 
-const character = (race, gender, job, level, roll_type, min_atribute_value) => {
+const character = (race, gender, job, level, min_atribute_value) => {
     let output = {
         Name: null,
         Race: capitalize(race),
@@ -14,7 +14,7 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
 
     output.Name = name(race, gender);
 
-    const ordered_atributes = atributes_values(roll_type, min_atribute_value);
+    const ordered_atributes = atributes_values(min_atribute_value);
     let atributes = [];
     let hp = 10;
 
@@ -38,6 +38,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
             case 'gnome':
                 atributes[3] += 1;
                 atributes[4] -= 1;
+                break;
+            case 'halfling':
+                atributes[1] += 1;
+                atributes[0] -= 1;
                 break;
         }
 
@@ -87,6 +91,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
                 atributes[3] += 1;
                 atributes[4] -= 1;
                 break;
+            case 'halfling':
+                atributes[1] += 1;
+                atributes[0] -= 1;
+                break;
         }
 
         if (atributes[2] === 15) {
@@ -126,6 +134,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
             case 'gnome':
                 atributes[3] += 1;
                 atributes[4] -= 1;
+                break;
+            case 'halfling':
+                atributes[1] += 1;
+                atributes[0] -= 1;
                 break;
         }
 
@@ -167,6 +179,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
                 atributes[3] += 1;
                 atributes[4] -= 1;
                 break;
+            case 'halfling':
+                atributes[1] += 1;
+                atributes[0] -= 1;
+                break;
         }
 
         if (atributes[2] === 15) {
@@ -198,5 +214,3 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
 
     return output;
 };
-
-console.log(character('human', 'female', 'men at arms', 1, 'roll', 8));
