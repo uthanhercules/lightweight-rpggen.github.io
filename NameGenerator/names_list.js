@@ -135,7 +135,6 @@ const elf_first_name_f = [
     'Valanthe',
     'Xanaphia',
 ];
-
 const elf_last_name = [
     'Amakiir',
     'Amastacia',
@@ -221,7 +220,6 @@ const human_first_name_m = [
     'Salazar',
     'Umbero',
 ];
-
 const human_first_name_f = [
     'Arveene',
     'Esvele',
@@ -283,7 +281,6 @@ const human_first_name_f = [
     'Selise',
     'Vonda',
 ];
-
 const human_last_name = [
     'Amblecrown',
     'Buckman',
@@ -340,6 +337,140 @@ const human_last_name = [
     "Ram'ondo",
 ];
 
+const gnome_first_name_m = [
+    'Alston',
+    'Alvyn',
+    'Boddynock',
+    'Brocc',
+    'Burgell',
+    'Dimble',
+    'Eldon',
+    'Erky',
+    'Fonkin',
+    'Frug',
+    'Gerbo',
+    'Gimble',
+    'Glim',
+    'Jebeddo',
+    'Kellen',
+    'Namfoodle',
+    'Orryn',
+    'Roondar',
+    'Seebo',
+    'Sindri',
+    'Warryn',
+    'Wrenn',
+    'Zook',
+];
+const gnome_first_name_f = [
+    'Bimpnottin',
+    'Breena',
+    'Caramip',
+    'Carlin',
+    'Donella',
+    'Duvamil',
+    'Ella',
+    'Ellyjobell',
+    'Ellywick',
+    'Lilli',
+    'Loopmottin',
+    'Lorilla',
+    'Mardnab',
+    'Nissa',
+    'Nyx',
+    'Oda',
+    'Orla',
+    'Roywyn',
+    'Shamil',
+    'Tana',
+    'Waywocket',
+    'Zanna',
+];
+const gnome_nickname = [
+    'Aleslosh',
+    'Ashhearth',
+    'Badger',
+    'Cloak',
+    'Doublelock',
+    'Filchbatter',
+    'Fnipper',
+    'Ku',
+    'Nim',
+    'Oneshoe',
+    'Pock',
+    'Sparklegem',
+    'Stumbleduck',
+];
+const gnome_last_name = [
+    'Beren',
+    'Daergel',
+    'Folkor',
+    'Garrick',
+    'Nackle',
+    'Murnig',
+    'Ningel',
+    'Raulnor',
+    'Scheppen',
+    'Timbers',
+    'Turen',
+];
+
+const halfling_first_name_m = [
+    'Alton',
+    'Ander',
+    'Cade',
+    'Corrin',
+    'Eldon',
+    'Errich',
+    'Finnan',
+    'Garret',
+    'Lindal',
+    'Lyle',
+    'Merric',
+    'Milo',
+    'Osborn',
+    'Perrin',
+    'Reed',
+    'Roscoe',
+    'Wellby',
+];
+const halfling_first_name_f = [
+    'Andry',
+    'Bree',
+    'Callie',
+    'Cora',
+    'Euphemia',
+    'Jillian',
+    'Kithri',
+    'Lavinia',
+    'Lidda',
+    'Merla',
+    'Nedda',
+    'Paela',
+    'Portia',
+    'Seraphina',
+    'Shaena',
+    'Trym',
+    'Vani',
+    'Verna',
+];
+const halfling_last_name = [
+    'Brushgather',
+    'Goodbarrel',
+    'Greenbottle',
+    'High-hill',
+    'Hilltopple',
+    'Leagallow',
+    'Tealeaf',
+    'Thorngage',
+    'Tosscobble',
+    'Underbough',
+];
+
+const half_elf_first_name_m = [...elf_first_name_m, ...human_first_name_m];
+const half_elf_first_name_f = [...elf_first_name_f, ...human_first_name_f];
+const half_elf_last_name = [...elf_last_name, ...human_last_name];
+
 module.exports = {
     dwarf_first_name_m,
     dwarf_first_name_f,
@@ -350,4 +481,14 @@ module.exports = {
     human_first_name_m,
     human_first_name_f,
     human_last_name,
+    gnome_first_name_m,
+    gnome_first_name_f,
+    gnome_nickname,
+    gnome_last_name,
+    halfling_first_name_m,
+    halfling_first_name_f,
+    halfling_last_name,
+    half_elf_first_name_m,
+    half_elf_first_name_f,
+    half_elf_last_name,
 };
