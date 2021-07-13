@@ -35,6 +35,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
                 atributes[1] += 1;
                 atributes[2] -= 1;
                 break;
+            case 'gnome':
+                atributes[3] += 1;
+                atributes[4] -= 1;
+                break;
         }
 
         switch (atributes[2]) {
@@ -79,6 +83,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
                 atributes[1] += 1;
                 atributes[2] -= 1;
                 break;
+            case 'gnome':
+                atributes[3] += 1;
+                atributes[4] -= 1;
+                break;
         }
 
         if (atributes[2] === 15) {
@@ -114,6 +122,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
             case 'elf':
                 atributes[1] += 1;
                 atributes[2] -= 1;
+                break;
+            case 'gnome':
+                atributes[3] += 1;
+                atributes[4] -= 1;
                 break;
         }
 
@@ -151,6 +163,10 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
                 atributes[1] += 1;
                 atributes[2] -= 1;
                 break;
+            case 'gnome':
+                atributes[3] += 1;
+                atributes[4] -= 1;
+                break;
         }
 
         if (atributes[2] === 15) {
@@ -183,4 +199,4 @@ const character = (race, gender, job, level, roll_type, min_atribute_value) => {
     return output;
 };
 
-console.log(character('elf', 'female', 'men at arms', 5, 'roll', 8));
+console.log(character('human', 'female', 'men at arms', 1, 'roll', 8));
