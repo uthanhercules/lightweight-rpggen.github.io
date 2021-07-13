@@ -7,11 +7,11 @@ function dice_roll(min, max) {
 
 function capitalize(name) {
     function capitalize_word(word) {
-        return word.charAt(0).toUpperCase() + word.slice(1);
+        const word_capitalized = word.charAt(0).toUpperCase() + word.slice(1);
+        return word_capitalized;
     }
 
     const name_capitalized = name.split(' ').map(capitalize_word).join(' ');
-
     return name_capitalized;
 }
 

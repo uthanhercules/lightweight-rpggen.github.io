@@ -9,22 +9,22 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Gender: capitalize(gender),
         Class: capitalize(job),
         Atributes: null,
-        Hp: null,
+        HP: null,
     };
 
     output.Name = name(race, gender);
 
-    const ordered_atributes = atributes_values(min_atribute_value);
+    const raw_atributes = atributes_values(min_atribute_value);
     let atributes = [];
     let hp = 0;
 
     if (job === 'men at arms') {
-        atributes.push(ordered_atributes[0]);
-        atributes.push(ordered_atributes[2]);
-        atributes.push(ordered_atributes[1]);
-        atributes.push(ordered_atributes[5]);
-        atributes.push(ordered_atributes[4]);
-        atributes.push(ordered_atributes[3]);
+        atributes.push(raw_atributes[0]);
+        atributes.push(raw_atributes[2]);
+        atributes.push(raw_atributes[1]);
+        atributes.push(raw_atributes[5]);
+        atributes.push(raw_atributes[4]);
+        atributes.push(raw_atributes[3]);
 
         hp = 10;
 
@@ -70,15 +70,14 @@ const character = (race, gender, job, level, min_atribute_value) => {
                 }
             }
         }
-        output.Hp = hp;
     }
     if (job === 'priest') {
-        atributes.push(ordered_atributes[3]);
-        atributes.push(ordered_atributes[5]);
-        atributes.push(ordered_atributes[4]);
-        atributes.push(ordered_atributes[1]);
-        atributes.push(ordered_atributes[0]);
-        atributes.push(ordered_atributes[2]);
+        atributes.push(raw_atributes[3]);
+        atributes.push(raw_atributes[5]);
+        atributes.push(raw_atributes[4]);
+        atributes.push(raw_atributes[1]);
+        atributes.push(raw_atributes[0]);
+        atributes.push(raw_atributes[2]);
 
         hp = 8;
 
@@ -116,15 +115,14 @@ const character = (race, gender, job, level, min_atribute_value) => {
                 }
             }
         }
-        output.Hp = hp;
     }
     if (job === 'rogue') {
-        atributes.push(ordered_atributes[5]);
-        atributes.push(ordered_atributes[0]);
-        atributes.push(ordered_atributes[4]);
-        atributes.push(ordered_atributes[2]);
-        atributes.push(ordered_atributes[3]);
-        atributes.push(ordered_atributes[1]);
+        atributes.push(raw_atributes[5]);
+        atributes.push(raw_atributes[0]);
+        atributes.push(raw_atributes[4]);
+        atributes.push(raw_atributes[2]);
+        atributes.push(raw_atributes[3]);
+        atributes.push(raw_atributes[1]);
 
         hp = 6;
 
@@ -162,15 +160,14 @@ const character = (race, gender, job, level, min_atribute_value) => {
                 }
             }
         }
-        output.Hp = hp;
     }
-    if (job === 'wizard') {
-        atributes.push(ordered_atributes[5]);
-        atributes.push(ordered_atributes[3]);
-        atributes.push(ordered_atributes[4]);
-        atributes.push(ordered_atributes[0]);
-        atributes.push(ordered_atributes[1]);
-        atributes.push(ordered_atributes[2]);
+    if (job === 'arcane') {
+        atributes.push(raw_atributes[5]);
+        atributes.push(raw_atributes[3]);
+        atributes.push(raw_atributes[4]);
+        atributes.push(raw_atributes[0]);
+        atributes.push(raw_atributes[1]);
+        atributes.push(raw_atributes[2]);
 
         hp = 4;
 
@@ -208,8 +205,9 @@ const character = (race, gender, job, level, min_atribute_value) => {
                 }
             }
         }
-        output.Hp = hp;
     }
+
+    output.HP = hp;
 
     output.Atributes = {
         STR: atributes[0],
@@ -222,5 +220,3 @@ const character = (race, gender, job, level, min_atribute_value) => {
 
     return output;
 };
-
-console.log(character('halfling', 'female', 'wizard', 1, 8));
