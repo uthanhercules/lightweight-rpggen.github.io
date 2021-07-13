@@ -16,7 +16,7 @@ const character = (race, gender, job, level, min_atribute_value) => {
 
     const ordered_atributes = atributes_values(min_atribute_value);
     let atributes = [];
-    let hp = 10;
+    let hp = 0;
 
     if (job === 'men at arms') {
         atributes.push(ordered_atributes[0]);
@@ -25,6 +25,8 @@ const character = (race, gender, job, level, min_atribute_value) => {
         atributes.push(ordered_atributes[5]);
         atributes.push(ordered_atributes[4]);
         atributes.push(ordered_atributes[3]);
+
+        hp = 10;
 
         switch (race) {
             case 'dwarf':
@@ -78,6 +80,8 @@ const character = (race, gender, job, level, min_atribute_value) => {
         atributes.push(ordered_atributes[0]);
         atributes.push(ordered_atributes[2]);
 
+        hp = 8;
+
         switch (race) {
             case 'dwarf':
                 atributes[2] += 1;
@@ -122,6 +126,8 @@ const character = (race, gender, job, level, min_atribute_value) => {
         atributes.push(ordered_atributes[3]);
         atributes.push(ordered_atributes[1]);
 
+        hp = 6;
+
         switch (race) {
             case 'dwarf':
                 atributes[2] += 1;
@@ -165,6 +171,8 @@ const character = (race, gender, job, level, min_atribute_value) => {
         atributes.push(ordered_atributes[0]);
         atributes.push(ordered_atributes[1]);
         atributes.push(ordered_atributes[2]);
+
+        hp = 4;
 
         switch (race) {
             case 'dwarf':
@@ -214,3 +222,5 @@ const character = (race, gender, job, level, min_atribute_value) => {
 
     return output;
 };
+
+console.log(character('halfling', 'female', 'wizard', 1, 8));
