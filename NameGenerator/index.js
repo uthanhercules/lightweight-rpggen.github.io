@@ -101,8 +101,21 @@ const name = (race, gender) => {
             return `${halfling_first_name_f[first_index]} ${halfling_last_name[last_index]}`;
         }
     }
-};
 
-console.log(name('halfling', 'male'));
+    if (race === 'half elf') {
+        if (gender === 'male') {
+            const first_index = random_index(half_elf_first_name_m.length - 1);
+            const last_index = random_index(half_elf_last_name.length - 1);
+
+            return `${half_elf_first_name_m[first_index]} ${half_elf_last_name[last_index]}`;
+        }
+        if (gender === 'female') {
+            const first_index = random_index(half_elf_first_name_f.length - 1);
+            const last_index = random_index(half_elf_last_name.length - 1);
+
+            return `${half_elf_first_name_f[first_index]} ${half_elf_last_name[last_index]}`;
+        }
+    }
+};
 
 module.exports = { name };
