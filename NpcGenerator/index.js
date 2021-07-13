@@ -7,12 +7,11 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Name: null,
         Race: capitalize(race),
         Gender: capitalize(gender),
+        Age: null,
         Class: capitalize(job),
         Atributes: null,
-        HP: null,
+        Hp: null,
     };
-
-    output.Name = name(race, gender);
 
     const raw_atributes = atributes_values(min_atribute_value);
     let atributes = [];
@@ -207,8 +206,25 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
     }
 
-    output.HP = hp;
+    const age = () => {
+        switch (race) {
+            case 'dwarf':
+                return 40 + dice_roll(5, 30);
+            case 'elf':
+                return 100 + dice_roll(5, 30);
+            case 'gnome':
+                return 60 + dice_roll(3, 36);
+            case 'halfling':
+                return 20 + dice_roll(3, 12);
+            case 'half elf':
+                return 15 + dice_roll(1, 6);
+            case 'human':
+                return 18 + dice_roll(1, 4);
+        }
+    };
 
+    output.Name = name(race, gender);
+    output.Age = age();
     output.Atributes = {
         STR: atributes[0],
         DEX: atributes[1],
@@ -217,6 +233,9 @@ const character = (race, gender, job, level, min_atribute_value) => {
         WIS: atributes[4],
         CHA: atributes[5],
     };
+    output.Hp = hp;
 
     return output;
 };
+
+console.log(character('human', 'female', 'men at arms', 1, 8));
