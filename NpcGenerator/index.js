@@ -7,10 +7,28 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Name: null,
         Race: capitalize(race),
         Gender: capitalize(gender),
-        Age: null,
         Class: capitalize(job),
         Atributes: null,
+        Level: level,
+        Age: null,
         Hp: null,
+    };
+
+    const age = () => {
+        switch (race) {
+            case 'dwarf':
+                return 40 + dice_roll(5, 30);
+            case 'elf':
+                return 100 + dice_roll(5, 30);
+            case 'gnome':
+                return 60 + dice_roll(3, 36);
+            case 'halfling':
+                return 20 + dice_roll(3, 12);
+            case 'half elf':
+                return 15 + dice_roll(1, 6);
+            case 'human':
+                return 18 + dice_roll(1, 4);
+        }
     };
 
     const raw_atributes = atributes_values(min_atribute_value);
@@ -61,12 +79,42 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
 
         if (level > 1) {
-            for (let i = 0; i < level - 2; i++) {
-                if (atributes[2] >= 17) {
-                    hp += dice_roll(2, 10);
+            for (let i = 0; i < level - 1; i++) {
+                if (atributes[2] === 18) {
+                    const bonus_hp = dice_roll(2, 10) + 4;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 17) {
+                    const bonus_hp = dice_roll(2, 10) + 3;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 16) {
+                    const bonus_hp = dice_roll(1, 10) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 15) {
+                    const bonus_hp = dice_roll(1, 10) + 1;
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 7) {
+                    const bonus_hp = dice_roll(1, 10);
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 4) {
+                    const bonus_hp = dice_roll(1, 10) - 1;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 } else {
-                    hp += dice_roll(1, 10);
+                    const bonus_hp = dice_roll(1, 10) - 2;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 }
+            }
+        }
+
+        if (level > 9) {
+            for (let i = 0; i < level - 9; i++) {
+                console.log('hp bonus');
+                hp += 3;
             }
         }
     }
@@ -106,12 +154,38 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
 
         if (level > 1) {
-            for (let i = 0; i < level - 2; i++) {
+            for (let i = 0; i < level - 1; i++) {
                 if (atributes[2] >= 17) {
-                    hp += dice_roll(2, 8);
+                    const bonus_hp = dice_roll(2, 8) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 16) {
+                    const bonus_hp = dice_roll(1, 8) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 15) {
+                    const bonus_hp = dice_roll(1, 8) + 1;
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 7) {
+                    const bonus_hp = dice_roll(1, 8);
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 4) {
+                    const bonus_hp = dice_roll(1, 8) - 1;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 } else {
-                    hp += dice_roll(1, 8);
+                    const bonus_hp = dice_roll(1, 8) - 2;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 }
+            }
+        }
+
+        if (level > 9) {
+            for (let i = 0; i < level - 9; i++) {
+                hp += 2;
             }
         }
     }
@@ -151,12 +225,38 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
 
         if (level > 1) {
-            for (let i = 0; i < level - 2; i++) {
+            for (let i = 0; i < level - 1; i++) {
                 if (atributes[2] >= 17) {
-                    hp += dice_roll(2, 6);
+                    const bonus_hp = dice_roll(2, 6) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 16) {
+                    const bonus_hp = dice_roll(1, 6) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 15) {
+                    const bonus_hp = dice_roll(1, 6) + 1;
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 7) {
+                    const bonus_hp = dice_roll(1, 6);
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 4) {
+                    const bonus_hp = dice_roll(1, 6) - 1;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 } else {
-                    hp += dice_roll(1, 6);
+                    const bonus_hp = dice_roll(1, 6) - 2;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 }
+            }
+        }
+
+        if (level > 9) {
+            for (let i = 0; i < level - 9; i++) {
+                hp += 2;
             }
         }
     }
@@ -196,32 +296,41 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
 
         if (level > 1) {
-            for (let i = 0; i < level - 2; i++) {
+            for (let i = 0; i < level - 1; i++) {
                 if (atributes[2] >= 17) {
-                    hp += dice_roll(2, 4);
+                    const bonus_hp = dice_roll(2, 4) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 16) {
+                    const bonus_hp = dice_roll(1, 4) + 2;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 15) {
+                    const bonus_hp = dice_roll(1, 4) + 1;
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 7) {
+                    const bonus_hp = dice_roll(1, 4);
+                    hp += bonus_hp;
+                } else if (atributes[2] >= 4) {
+                    const bonus_hp = dice_roll(1, 4) - 1;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 } else {
-                    hp += dice_roll(1, 4);
+                    const bonus_hp = dice_roll(1, 4) - 2;
+
+                    if (bonus_hp > 0) {
+                        hp += bonus_hp;
+                    }
                 }
             }
         }
-    }
 
-    const age = () => {
-        switch (race) {
-            case 'dwarf':
-                return 40 + dice_roll(5, 30);
-            case 'elf':
-                return 100 + dice_roll(5, 30);
-            case 'gnome':
-                return 60 + dice_roll(3, 36);
-            case 'halfling':
-                return 20 + dice_roll(3, 12);
-            case 'half elf':
-                return 15 + dice_roll(1, 6);
-            case 'human':
-                return 18 + dice_roll(1, 4);
+        if (level > 9) {
+            for (let i = 0; i < level - 9; i++) {
+                hp += 1;
+            }
         }
-    };
+    }
 
     output.Name = name(race, gender);
     output.Age = age();
@@ -238,4 +347,4 @@ const character = (race, gender, job, level, min_atribute_value) => {
     return output;
 };
 
-console.log(character('human', 'female', 'men at arms', 1, 8));
+console.log(character('elf', 'male', 'men at arms', 11, 8));
