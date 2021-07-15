@@ -113,7 +113,6 @@ const character = (race, gender, job, level, min_atribute_value) => {
 
         if (level > 9) {
             for (let i = 0; i < level - 9; i++) {
-                console.log('hp bonus');
                 hp += 3;
             }
         }
@@ -347,4 +346,4 @@ const character = (race, gender, job, level, min_atribute_value) => {
     return output;
 };
 
-console.log(character('elf', 'male', 'men at arms', 11, 8));
+console.log(character('dwarf', 'male', 'men at arms', 20, 8));
