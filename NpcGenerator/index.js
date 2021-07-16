@@ -1,6 +1,7 @@
 const { name } = require('../NameGenerator');
 const { capitalize, dice_roll } = require('../utilities');
 const { atributes_values } = require('../AtributeRoller');
+const { character_details } = require('../DescriptionGenerator');
 
 const character = (race, gender, job, level, min_atribute_value) => {
     const age = () => {
@@ -30,6 +31,7 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Hp: null,
         Details: {
             Age: age(),
+            ...character_details(),
         },
     };
 
@@ -346,4 +348,4 @@ const character = (race, gender, job, level, min_atribute_value) => {
     return output;
 };
 
-console.log(character('dwarf', 'male', 'men at arms', 20, 8));
+console.log(character('dwarf', 'male', 'men at arms', 1, 8));

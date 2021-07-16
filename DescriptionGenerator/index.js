@@ -31,4 +31,4 @@ const character_details = () => {
     return output;
 };
 
-console.log(character_details());
+module.exports = { character_details };
