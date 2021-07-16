@@ -21,6 +21,74 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
     };
 
+    const height = () => {
+        if (gender === 'male') {
+            switch (race) {
+                case 'dwarf':
+                    return 109 + dice_roll(1, 10);
+                case 'elf':
+                    return 139 + dice_roll(1, 10);
+                case 'gnome':
+                    return 96 + dice_roll(1, 6);
+                case 'halfling':
+                    return 81 + dice_roll(2, 16);
+                case 'half elf':
+                    return 152 + dice_roll(2, 16);
+                case 'human':
+                    return 152 + dice_roll(2, 20);
+            }
+        } else {
+            switch (race) {
+                case 'dwarf':
+                    return 104 + dice_roll(1, 10);
+                case 'elf':
+                    return 127 + dice_roll(1, 10);
+                case 'gnome':
+                    return 91 + dice_roll(1, 6);
+                case 'halfling':
+                    return 76 + dice_roll(2, 16);
+                case 'half elf':
+                    return 147 + dice_roll(2, 12);
+                case 'human':
+                    return 149 + dice_roll(2, 20);
+            }
+        }
+    };
+
+    const weight = () => {
+        if (gender === 'male') {
+            switch (race) {
+                case 'dwarf':
+                    return 58 + dice_roll(1, 10);
+                case 'elf':
+                    return 40 + dice_roll(1, 10);
+                case 'gnome':
+                    return 32 + dice_roll(1, 6);
+                case 'halfling':
+                    return 23 + dice_roll(2, 16);
+                case 'half elf':
+                    return 49 + dice_roll(2, 12);
+                case 'human':
+                    return 63 + dice_roll(2, 20);
+            }
+        } else {
+            switch (race) {
+                case 'dwarf':
+                    return 47 + dice_roll(4, 40);
+                case 'elf':
+                    return 31 + dice_roll(3, 30);
+                case 'gnome':
+                    return 30 + dice_roll(5, 20);
+                case 'halfling':
+                    return 21 + dice_roll(5, 20);
+                case 'half elf':
+                    return 38 + dice_roll(3, 36);
+                case 'human':
+                    return 45 + dice_roll(6, 60);
+            }
+        }
+    };
+
     let output = {
         Name: name(race, gender),
         Race: capitalize(race),
@@ -31,6 +99,8 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Hp: null,
         Details: {
             Age: age(),
+            Height: height(),
+            Weight: weight(),
             ...character_details(),
         },
     };
