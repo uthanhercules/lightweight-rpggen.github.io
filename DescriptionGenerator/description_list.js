@@ -97,6 +97,7 @@ const flaws = [
 ];
 
 const alignment_actions = ['lawful', 'neutral', 'chaotic'];
+
 const alignment_moral = ['good', 'neutral', 'evil'];
 
 module.exports = {

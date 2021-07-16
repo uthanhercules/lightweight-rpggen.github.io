@@ -94,10 +94,10 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Race: capitalize(race),
         Gender: capitalize(gender),
         Class: capitalize(job),
-        Atributes: null,
-        Level: level,
         Hp: null,
-        Details: {
+        Level: level,
+        Atributes: null,
+        About: {
             Age: age(),
             Height: height(),
             Weight: weight(),
@@ -418,4 +418,4 @@ const character = (race, gender, job, level, min_atribute_value) => {
     return output;
 };
 
-console.log(character('dwarf', 'male', 'men at arms', 1, 8));
+console.log(character('elf', 'female', 'men at arms', 1, 8));
