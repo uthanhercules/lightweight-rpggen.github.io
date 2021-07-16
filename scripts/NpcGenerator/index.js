@@ -415,6 +415,7 @@ const character = (race, gender, job, level, min_atribute_value) => {
     };
     output.Hp = hp;
 
+    console.log(output);
     return output;
 };
 
