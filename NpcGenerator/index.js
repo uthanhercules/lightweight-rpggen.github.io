@@ -96,7 +96,7 @@ const character = (race, gender, job, level, min_atribute_value) => {
         Class: capitalize(job),
         Hp: null,
         Level: level,
-        Atributes: null,
+        Attributes: null,
         About: {
             Age: age(),
             Height: height(),
@@ -405,7 +405,7 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
     }
 
-    output.Atributes = {
+    output.Attributes = {
         STR: atributes[0],
         DEX: atributes[1],
         CON: atributes[2],
