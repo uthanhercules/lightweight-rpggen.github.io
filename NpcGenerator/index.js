@@ -3,17 +3,6 @@ const { capitalize, dice_roll } = require('../utilities');
 const { atributes_values } = require('../AtributeRoller');
 
 const character = (race, gender, job, level, min_atribute_value) => {
-    let output = {
-        Name: null,
-        Race: capitalize(race),
-        Gender: capitalize(gender),
-        Class: capitalize(job),
-        Atributes: null,
-        Level: level,
-        Age: null,
-        Hp: null,
-    };
-
     const age = () => {
         switch (race) {
             case 'dwarf':
@@ -29,6 +18,19 @@ const character = (race, gender, job, level, min_atribute_value) => {
             case 'human':
                 return 18 + dice_roll(1, 4);
         }
+    };
+
+    let output = {
+        Name: name(race, gender),
+        Race: capitalize(race),
+        Gender: capitalize(gender),
+        Class: capitalize(job),
+        Atributes: null,
+        Level: level,
+        Hp: null,
+        Details: {
+            Age: age(),
+        },
     };
 
     const raw_atributes = atributes_values(min_atribute_value);
@@ -331,8 +333,6 @@ const character = (race, gender, job, level, min_atribute_value) => {
         }
     }
 
-    output.Name = name(race, gender);
-    output.Age = age();
     output.Atributes = {
         STR: atributes[0],
         DEX: atributes[1],

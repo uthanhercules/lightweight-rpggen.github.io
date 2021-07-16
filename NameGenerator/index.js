@@ -20,9 +20,7 @@ const {
     half_elf_last_name,
 } = require('./names_list');
 
-const random_index = (highest_index) => {
-    return Math.floor(Math.random() * highest_index);
-};
+const { random_index } = require('../utilities');
 
 const name = (race, gender) => {
     if (race === 'dwarf') {

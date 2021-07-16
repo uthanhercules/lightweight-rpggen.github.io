@@ -15,4 +15,8 @@ function capitalize(name) {
     return name_capitalized;
 }
 
-module.exports = { dice_roll, capitalize };
+const random_index = (highest_index) => {
+    return Math.floor(Math.random() * highest_index);
+};
+
+module.exports = { dice_roll, capitalize, random_index };
