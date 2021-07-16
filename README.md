@@ -36,8 +36,9 @@ Here are the technologies used in this project.
   * Signature
   * Alignment
  
- ## Links
- * Application folder: https://github.com/uthanhercules/lightweight-rpg-generators/tree/main/scripts/NpcGenerator
+## Links
+* Application folder: https://github.com/uthanhercules/lightweight-rpg-generators/tree/main/scripts/NpcGenerator
+* Link of deployed application: https://uthanhercules.github.io/lightweight-rpggen.github.io/
 
 ![Output](https://user-images.githubusercontent.com/78041618/125918870-bc39834b-cace-40f3-ac40-3ac5eb4bd685.PNG)
 
