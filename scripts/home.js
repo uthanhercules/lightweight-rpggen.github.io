@@ -1,3 +1,4 @@
 function redirect(url) {
-    window.location.href = url;
+    alert('Under construction');
+    //window.location.href = url;
 }
