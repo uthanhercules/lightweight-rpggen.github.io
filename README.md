@@ -4,6 +4,8 @@ Project made for personal use. It is a character generator for the tabletop RPG 
 ## Technology 
 Here are the technologies used in this project.
  
+* HTML 5
+* CSS 3
 * JavaScript
  
 ## Features
