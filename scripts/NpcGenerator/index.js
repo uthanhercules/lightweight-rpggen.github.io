@@ -419,3 +419,5 @@ const character = (race, gender, job, level, min_atribute_value) => {
 };
 
 console.log(character('elf', 'female', 'men at arms', 1, 8));
+
+module.exports = { character };

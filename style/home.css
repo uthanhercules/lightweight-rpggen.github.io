@@ -1,0 +1,37 @@
+main {
+    margin: auto 0;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+article {
+    margin-top: 1rem;
+}
+
+button {
+    margin: 0.3rem;
+    width: 20rem;
+    height: 3rem;
+    border: solid 1px var(--orange);
+    background-color: transparent;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--orange);
+    transition: 0.5s;
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
