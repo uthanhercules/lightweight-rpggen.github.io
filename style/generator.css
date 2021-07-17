@@ -5,7 +5,5 @@ article section {
 }
 
 span {
-    position: relative;
-    top: 4rem;
     font-size: 2rem;
 }
