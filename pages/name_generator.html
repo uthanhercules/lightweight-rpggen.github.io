@@ -26,18 +26,18 @@
         </header>
         <main>
             <h1>Name Generator</h1>
-            <span id="name_generated">Your Name</span>
+            <span id="name_output">Your Name</span>
             <br />
             <article>
                 <section>
                     <label for="race">Race:</label>
                     <select name="race" id="race_list">
-                        <option value="Dwarf">Dwarf</option>
-                        <option value="Elf">Elf</option>
-                        <option value="Gnome">Gnome</option>
-                        <option value="Halfling">Halfling</option>
-                        <option value="Human">Human</option>
-                        <option value="Half-elf">Half-elf</option>
+                        <option value="dwarf">Dwarf</option>
+                        <option value="elf">Elf</option>
+                        <option value="gnome">Gnome</option>
+                        <option value="halfling">Halfling</option>
+                        <option value="human">Human</option>
+                        <option value="half elf">Half-elf</option>
                     </select>
                     <label for="gender">Gender:</label>
                     <select name="gender" id="gender_list">
@@ -46,7 +46,7 @@
                     </select>
                 </section>
             </article>
-            <button onclick="alert('Under Construction')">GIVE ME A NAME</button>
+            <button onclick="give_name()">GIVE ME A NAME</button>
         </main>
         <footer>
             <p>©2021</p>
@@ -57,5 +57,5 @@
             </p>
         </footer>
     </body>
-    <script src="../scripts/NameGenerator/index.js"></script>
+    <script src="../scripts/name_generator.js"></script>
 </html>
