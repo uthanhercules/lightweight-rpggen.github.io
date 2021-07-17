@@ -99,13 +99,3 @@ const flaws = [
 const alignment_actions = ['lawful', 'neutral', 'chaotic'];
 
 const alignment_moral = ['good', 'neutral', 'evil'];
-
-module.exports = {
-    appearances,
-    talents,
-    traits,
-    signatures,
-    flaws,
-    alignment_actions,
-    alignment_moral,
-};

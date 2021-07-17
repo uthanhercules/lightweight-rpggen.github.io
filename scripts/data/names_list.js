@@ -470,25 +470,3 @@ const halfling_last_name = [
 const half_elf_first_name_m = [...elf_first_name_m, ...human_first_name_m];
 const half_elf_first_name_f = [...elf_first_name_f, ...human_first_name_f];
 const half_elf_last_name = [...elf_last_name, ...human_last_name];
-
-module.exports = {
-    dwarf_first_name_m,
-    dwarf_first_name_f,
-    dwarf_last_name,
-    elf_first_name_m,
-    elf_first_name_f,
-    elf_last_name,
-    human_first_name_m,
-    human_first_name_f,
-    human_last_name,
-    gnome_first_name_m,
-    gnome_first_name_f,
-    gnome_nickname,
-    gnome_last_name,
-    halfling_first_name_m,
-    halfling_first_name_f,
-    halfling_last_name,
-    half_elf_first_name_m,
-    half_elf_first_name_f,
-    half_elf_last_name,
-};
