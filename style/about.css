@@ -5,7 +5,7 @@ h1 {
 }
 
 main {
-    padding: 0 20rem;
+    padding: 0 2rem;
 }
 
 main p {
@@ -19,7 +19,7 @@ article {
 
 button {
     margin: 0.3rem;
-    width: 30rem;
+    width: 18rem;
     height: 4rem;
     border: solid 1px var(--orange);
     background-color: transparent;

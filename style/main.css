@@ -67,7 +67,7 @@ footer {
 }
 
 @media (max-width: 450px) {
-    footer {
-        font-size: 0.65rem;
+    footer p {
+        font-size: 0.7rem;
     }
 }
