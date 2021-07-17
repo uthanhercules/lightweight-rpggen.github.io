@@ -7,6 +7,8 @@
         <title>Name Generator | Lightweight RPG Utilities</title>
         <link rel="shortcut icon" href="../images/favicon.png" />
         <link rel="stylesheet" href="../style/main.css" />
+        <link rel="stylesheet" href="../style/about.css" />
+        <link rel="stylesheet" href="../style/name_generator.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -18,13 +20,33 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="../index.html">HOME</a></li>
-                    <li><a href="./generators.html">GENERATORS</a></li>
-                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="../index.html">< BACK</a></li>
                 </ul>
             </nav>
         </header>
-        <main></main>
+        <main>
+            <h1>Name Generator</h1>
+            <article>
+                <section>
+                    <label for="race">Race:</label>
+                    <select name="race" id="race_list">
+                        <option value="Dwarf">Dwarf</option>
+                        <option value="Elf">Elf</option>
+                        <option value="Gnome">Gnome</option>
+                        <option value="Halfling">Halfling</option>
+                        <option value="Human">Human</option>
+                        <option value="Half-elf">Half-elf</option>
+                    </select>
+                    <label for="gender">Gender:</label>
+                    <select name="gender" id="gender_list">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </section>
+            </article>
+            <button onclick="alert('Under Construction')">GIVE ME A NAME</button>
+            <span id="name_generated"></span>
+        </main>
         <footer>
             <p>©2021</p>
             <p>
