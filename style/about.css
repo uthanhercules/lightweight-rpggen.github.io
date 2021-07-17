@@ -1,20 +1,26 @@
-main {
-    margin: auto 0;
-}
-
 h1 {
     color: var(--light-blue);
+    margin: 1rem 0;
     font-size: 3.6rem;
 }
 
+main {
+    padding: 0 20rem;
+}
+
+main p {
+    max-width: 48rem;
+    text-align: justify;
+}
+
 article {
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 button {
     margin: 0.3rem;
-    width: 20rem;
-    height: 3rem;
+    width: 30rem;
+    height: 4rem;
     border: solid 1px var(--orange);
     background-color: transparent;
     font-size: 0.8rem;
