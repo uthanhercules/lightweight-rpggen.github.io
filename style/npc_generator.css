@@ -1,3 +1,15 @@
+span {
+    font-size: 2rem;
+}
+
+button {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    margin: 2.5rem 0 1rem 0;
+}
+
 article,
 section {
     display: flex;
@@ -17,4 +29,72 @@ input {
 
 label {
     margin: 0.5rem;
+}
+
+.attribute_list {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.attribute_list_row,
+.character_row,
+.character_block,
+.about_row,
+.alignment {
+    display: flex;
+    align-self: center;
+    gap: 0.5rem;
+}
+
+.alignment {
+    margin-bottom: 1rem;
+}
+
+.attribute,
+.character_row div,
+.about_row div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.attribute p {
+    font-size: 1.2rem;
+}
+
+.character,
+.about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.character_data {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.character_stat {
+    font-weight: 700;
+}
+
+.character_block,
+.about_block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about_block div {
+    align-self: center;
+}
+
+.about_block p {
+    text-align: center;
+}
+
+.character {
+    display: none;
+    gap: 1rem;
 }

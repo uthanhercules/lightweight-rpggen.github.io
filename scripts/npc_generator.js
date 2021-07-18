@@ -568,6 +568,10 @@ const halfling_last_name = [
     'Underbough',
 ];
 
+const half_elf_first_name_m = [...elf_first_name_m, ...human_first_name_m];
+const half_elf_first_name_f = [...elf_first_name_f, ...human_first_name_f];
+const half_elf_last_name = [...elf_last_name, ...human_last_name];
+
 function dice_roll(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -724,7 +728,7 @@ const character_name = (race, gender) => {
     }
 };
 
-const character = (race, gender, job, level, min_attribute_value) => {
+const character_adnd = (race, gender, job, level, min_attribute_value) => {
     const age = () => {
         switch (race) {
             case 'dwarf':
@@ -1139,14 +1143,84 @@ const character = (race, gender, job, level, min_attribute_value) => {
     return output;
 };
 
-console.log(character('elf', 'female', 'men at arms', 1, 8));
-
-//race, gender, job, level, min_atribute_value
+console.log(character_adnd('elf', 'female', 'men at arms', 1, 8));
 
 function generate_character() {
     const race = document.querySelector('#race_list').value;
     const gender = document.querySelector('#gender_list').value;
     const job = document.querySelector('#class_list').value;
-    const level = parseInt(document.querySelector('#level').value);
-    const min_attribute_value = parseInt(document.querySelector('#min_attribute').value);
+    let level = parseInt(document.querySelector('#level').value);
+    let min_attribute_value = parseInt(document.querySelector('#min_attribute').value);
+    const system = document.querySelector('#system_list').value;
+
+    if (isNaN(level)) {
+        level = 1;
+    }
+    if (isNaN(min_attribute_value)) {
+        min_attribute_value = 8;
+    }
+    if (level < 1) {
+        level = 1;
+    }
+    if (min_attribute_value < 1) {
+        min_attribute_value = 1;
+    }
+
+    if (system === 'adnd') {
+        const character = character_adnd(race, gender, job, level, min_attribute_value);
+
+        document.querySelector('#character_name').innerHTML = character.Name;
+        document.querySelector('#character_race').innerHTML = character.Race;
+        document.querySelector('#character_gender').innerHTML = character.Gender;
+        document.querySelector('#character_class').innerHTML = character.Class;
+        document.querySelector('#character_hp').innerHTML = character.Hp;
+        document.querySelector('#character_level').innerHTML = character.Level;
+
+        document.querySelector('#character_str').innerHTML = String(character.Attributes.STR);
+        document.querySelector('#character_dex').innerHTML = String(character.Attributes.DEX);
+        document.querySelector('#character_con').innerHTML = String(character.Attributes.CON);
+        document.querySelector('#character_int').innerHTML = String(character.Attributes.INT);
+        document.querySelector('#character_wis').innerHTML = String(character.Attributes.WIS);
+        document.querySelector('#character_cha').innerHTML = String(character.Attributes.CHA);
+
+        document.querySelector('#character_age').innerHTML = String(character.About.Age);
+        document.querySelector('#character_height').innerHTML = String(character.About.Height);
+        document.querySelector('#character_weight').innerHTML = String(character.About.Weight);
+        document.querySelector('#character_alignment').innerHTML = character.About.Alignment;
+        document.querySelector('#character_appearance').innerHTML = character.About.Appearance;
+        document.querySelector('#character_trait').innerHTML = character.About.Trait;
+        document.querySelector('#character_talent').innerHTML = character.About.Talent;
+        document.querySelector('#character_flaw').innerHTML = character.About.Flaw;
+        document.querySelector('#character_signature').innerHTML = character.About.Signature;
+
+        document.querySelector('.character').style.display = 'block';
+    } else if (system === 'generic') {
+        const character = character_adnd(race, gender, job, level, min_attribute_value);
+
+        document.querySelector('#character_name').innerHTML = character.Name;
+        document.querySelector('#character_race').innerHTML = character.Race;
+        document.querySelector('#character_gender').innerHTML = character.Gender;
+        document.querySelector('#character_class').innerHTML = '—';
+        document.querySelector('#character_hp').innerHTML = '—';
+        document.querySelector('#character_level').innerHTML = character.Level;
+
+        document.querySelector('#character_str').innerHTML = '—';
+        document.querySelector('#character_dex').innerHTML = '—';
+        document.querySelector('#character_con').innerHTML = '—';
+        document.querySelector('#character_int').innerHTML = '—';
+        document.querySelector('#character_wis').innerHTML = '—';
+        document.querySelector('#character_cha').innerHTML = '—';
+
+        document.querySelector('#character_age').innerHTML = `${character.About.Age}yo`;
+        document.querySelector('#character_height').innerHTML = `${character.About.Height}cm`;
+        document.querySelector('#character_weight').innerHTML = `${character.About.Weight}kg`;
+        document.querySelector('#character_alignment').innerHTML = character.About.Alignment;
+        document.querySelector('#character_appearance').innerHTML = character.About.Appearance;
+        document.querySelector('#character_trait').innerHTML = character.About.Trait;
+        document.querySelector('#character_talent').innerHTML = character.About.Talent;
+        document.querySelector('#character_flaw').innerHTML = character.About.Flaw;
+        document.querySelector('#character_signature').innerHTML = character.About.Signature;
+
+        document.querySelector('.character').style.display = 'block';
+    }
 }

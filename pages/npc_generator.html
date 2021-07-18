@@ -27,8 +27,6 @@
         </header>
         <main>
             <h1>NPC Generator</h1>
-            <span id="name_output">Your Character</span>
-            <br />
             <article>
                 <section>
                     <label for="race_list">Race:</label>
@@ -65,9 +63,148 @@
                         id="min_attribute"
                         placeholder="8"
                     />
+                    <label for="system_list">System:</label>
+                    <select name="system" id="system_list">
+                        <option value="adnd">AD&D</option>
+                        <option value="generic">Generic</option>
+                    </select>
                 </section>
             </article>
             <button onclick="generate_character()">GIVE ME A CHARACTER</button>
+            <br />
+            <span id="character_name">Your Character</span>
+            <div class="character">
+                <div class="character_block">
+                    <div class="character_row">
+                        <div>
+                            <p>Race:</p>
+                            <p id="character_race" class="character_stat">Elf</p>
+                        </div>
+                        <div>
+                            <p>Gender:</p>
+                            <p id="character_gender" class="character_stat">Female</p>
+                        </div>
+                    </div>
+                    <div class="character_row">
+                        <div>
+                            <p>Class:</p>
+                            <p id="character_class" class="character_stat">Men At Arms</p>
+                        </div>
+                        <div>
+                            <p>HP:</p>
+                            <p id="character_hp" class="character_stat">10</p>
+                        </div>
+                        <div>
+                            <p>Level:</p>
+                            <p id="character_level" class="character_stat">1</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="attribute_list">
+                        <div class="attribute_list_row">
+                            <div class="attribute">
+                                <p>STR:</p>
+                                <p id="character_str" class="character_stat">18</p>
+                            </div>
+                            <div class="attribute">
+                                <p>DEX:</p>
+                                <p id="character_dex" class="character_stat">18</p>
+                            </div>
+                            <div class="attribute">
+                                <p>CON:</p>
+                                <p id="character_con" class="character_stat">18</p>
+                            </div>
+                        </div>
+                        <div class="attribute_list_row">
+                            <div class="attribute">
+                                <p>INT:</p>
+                                <p id="character_int" class="character_stat">18</p>
+                            </div>
+                            <div class="attribute">
+                                <p>WIS:</p>
+                                <p id="character_wis" class="character_stat">18</p>
+                            </div>
+                            <div class="attribute">
+                                <p>CHA:</p>
+                                <p id="character_cha" class="character_stat">18</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>ABOUT</h2>
+                    <div class="about">
+                        <div class="about_row">
+                            <div>
+                                <p>Age:</p>
+                                <p id="character_age" class="character_stat">18</p>
+                            </div>
+                            <div>
+                                <p>Height:</p>
+                                <p id="character_height" class="character_stat">152</p>
+                            </div>
+                            <div>
+                                <p>Weight:</p>
+                                <p id="character_weight" class="character_stat">50</p>
+                            </div>
+                        </div>
+                        <div class="alignment">
+                            <p>Alignment:</p>
+                            <p id="character_alignment" class="character_stat">Neutral Good</p>
+                        </div>
+                        <div class="about_block">
+                            <div>
+                                <p>Appearance:</p>
+                                <p id="character_appearance" class="character_stat">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Perspiciatis atque magni suscipit dolores earum vero praesentium
+                                    necessitatibus, pariatur, quia eveniet hic enim, ullam quis id
+                                    blanditiis tempora iusto dolorem ab?
+                                </p>
+                            </div>
+                            <div>
+                                <p>Trait:</p>
+                                <p id="character_trait" class="character_stat">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad,
+                                    animi ab atque officiis ea esse, hic culpa delectus maiores
+                                    voluptatibus nihil accusamus quos aperiam quas! Mollitia quia
+                                    commodi eius assumenda?
+                                </p>
+                            </div>
+                            <div>
+                                <p>Talent:</p>
+                                <p id="character_talent" class="character_stat">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut
+                                    quia doloremque obcaecati aliquam modi? Dolorem, quia optio
+                                    cupiditate magnam animi libero ad vitae odit veniam nam
+                                    reiciendis fuga illum iure.
+                                </p>
+                            </div>
+                            <div>
+                                <p>Flaw:</p>
+                                <p id="character_flaw" class="character_stat">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Assumenda totam minus consequatur cupiditate vel. A quis minima
+                                    expedita officia laudantium assumenda necessitatibus cum autem,
+                                    quod quisquam repellat aperiam ex dignissimos.
+                                </p>
+                            </div>
+                            <div>
+                                <p>Signature:</p>
+                                <p id="character_signature" class="character_stat">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Laudantium eaque non blanditiis. Maiores cum quos provident ipsa
+                                    magni iste aspernatur modi doloremque labore? Id libero
+                                    temporibus deleniti consequatur autem consequuntur!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
         </main>
         <footer>
             <p>©2021</p>
