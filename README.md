@@ -1,6 +1,6 @@
-## Character Generator to Tabletop RPGs
+## Utilities to Tabletop RPGs
 
-Project made for personal use. It is a character generator for the tabletop RPG Advanced Dungeons and Dragons 2nd Edition.
+Project made for personal use. It is a Utilities for tabletop RPG and a character generator for Advanced Dungeons and Dragons 2E.
 
 ## Technology
 
