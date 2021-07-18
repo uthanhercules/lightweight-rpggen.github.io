@@ -74,16 +74,19 @@ function roll_the_dice() {
 
     console.log(mod);
 
+    let output_mod = mod;
+
     if (isNaN(mod)) {
         mod = 0;
     }
 
     if (mod < 0) {
         signal = '-';
+        output_mod = -mod;
     }
 
     const roll_value = dice_roll(min_number, max_number);
-    const output = `${roll_value} ${signal} ${-mod} = ${roll_value + mod}`;
+    const output = `${roll_value} ${signal} ${output_mod} = ${roll_value + mod}`;
 
     document.querySelector('#roll_output').innerHTML = output;
     rolled = true;
