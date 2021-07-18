@@ -7,24 +7,68 @@
         <title>NPC Generator | Lightweight RPG Utilities</title>
         <link rel="shortcut icon" href="../images/favicon.png" />
         <link rel="stylesheet" href="../style/main.css" />
+        <link rel="stylesheet" href="../style/pages.css" />
+        <link rel="stylesheet" href="../style/npc_generator.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
+        <script src="../scripts/npc_generator.js"></script>
     </head>
     <body>
         <header>
             <nav>
                 <ul>
-                    <li><a href="../index.html">HOME</a></li>
-                    <li><a href="./generators.html">GENERATORS</a></li>
-                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="./utilities.html">< BACK</a></li>
                 </ul>
             </nav>
         </header>
-        <main></main>
+        <main>
+            <h1>NPC Generator</h1>
+            <span id="name_output">Your Character</span>
+            <br />
+            <article>
+                <section>
+                    <label for="race_list">Race:</label>
+                    <select name="race" id="race_list">
+                        <option value="dwarf">Dwarf</option>
+                        <option value="elf">Elf</option>
+                        <option value="gnome">Gnome</option>
+                        <option value="halfling">Halfling</option>
+                        <option value="human">Human</option>
+                        <option value="half elf">Half-elf</option>
+                    </select>
+                    <label for="gender_list">Gender:</label>
+                    <select name="gender" id="gender_list">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <label for="class_list">Class:</label>
+                    <select name="class" id="class_list">
+                        <option value="men at arms">Men At Arms</option>
+                        <option value="priest">Priest</option>
+                        <option value="rogue">Rogue</option>
+                        <option value="arcane">Arcane</option>
+                    </select>
+                </section>
+                <section>
+                    <label for="level">Level:</label>
+                    <input type="number" name="level" min="1" max="20" id="level" placeholder="1" />
+                    <label for="min_attribute">Min Attribute:</label>
+                    <input
+                        type="number"
+                        name="min_attribute"
+                        min="1"
+                        max="18"
+                        id="min_attribute"
+                        placeholder="8"
+                    />
+                </section>
+            </article>
+            <button onclick="generate_character()">GIVE ME A CHARACTER</button>
+        </main>
         <footer>
             <p>©2021</p>
             <p>
@@ -34,5 +78,4 @@
             </p>
         </footer>
     </body>
-    <script src="../scripts/NpcGenerator/index.js"></script>
 </html>

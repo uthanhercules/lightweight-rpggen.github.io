@@ -1,0 +1,20 @@
+article,
+section {
+    display: flex;
+    justify-content: center;
+    align-self: start;
+}
+
+section {
+    margin: 0.8rem;
+    flex-direction: column;
+}
+
+select,
+input {
+    height: 2rem;
+}
+
+label {
+    margin: 0.5rem;
+}
