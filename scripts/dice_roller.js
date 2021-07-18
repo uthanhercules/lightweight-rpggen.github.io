@@ -7,7 +7,6 @@ function dice_roll(min, max) {
 }
 
 function add_dice(number_of_faces) {
-    console.log(rolled);
     if (rolled) {
         document.querySelector('#roll_output').innerHTML = 'Your Roll';
         document.querySelector('#dices_output').innerHTML = 'Your Dices';
@@ -71,15 +70,11 @@ function roll_the_dice() {
     const min_number = dices_added.length;
     let mod = parseInt(document.querySelector('#mod').value);
     let signal = '+';
-
-    console.log(mod);
-
     let output_mod = mod;
 
     if (isNaN(mod)) {
         mod = 0;
     }
-
     if (mod < 0) {
         signal = '-';
         output_mod = -mod;
