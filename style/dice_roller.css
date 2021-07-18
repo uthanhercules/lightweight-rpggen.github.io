@@ -1,0 +1,28 @@
+article section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    gap: 1rem;
+}
+
+span {
+    font-size: 2rem;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.dice {
+    width: 3.85rem;
+    height: 3.85rem;
+}
+
+#dices_output {
+    max-width: 20rem;
+    text-align: center;
+    font-size: 0.8rem;
+}

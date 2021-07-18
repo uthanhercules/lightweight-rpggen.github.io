@@ -7,24 +7,52 @@
         <title>Dice Roller | Lightweight RPG Utilities</title>
         <link rel="shortcut icon" href="../images/favicon.png" />
         <link rel="stylesheet" href="../style/main.css" />
+        <link rel="stylesheet" href="../style/pages.css" />
+        <link rel="stylesheet" href="../style/dice_roller.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
+        <script src="../scripts/dice_roller.js"></script>
     </head>
     <body>
         <header>
             <nav>
                 <ul>
-                    <li><a href="../index.html">HOME</a></li>
-                    <li><a href="./generators.html">GENERATORS</a></li>
-                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="./utilities.html">< BACK</a></li>
                 </ul>
             </nav>
         </header>
-        <main></main>
+        <main>
+            <h1>Dice Roller</h1>
+            <span id="roll_output">Your Roll</span>
+            <br />
+            <article>
+                <section>
+                    <div>
+                        <button class="dice" onclick="add_dice(2)">D2</button>
+                        <button class="dice" onclick="add_dice(4)">D4</button>
+                        <button class="dice" onclick="add_dice(6)">D6</button>
+                        <button class="dice" onclick="add_dice(8)">D8</button>
+                    </div>
+                    <div>
+                        <button class="dice" onclick="add_dice(10)">D10</button>
+                        <button class="dice" onclick="add_dice(12)">D12</button>
+                        <button class="dice" onclick="add_dice(20)">D20</button>
+                        <button class="dice" onclick="add_dice(100)">D100</button>
+                    </div>
+                    <div class="inputs">
+                        <label for="mod">Modificator:</label>
+                        <input type="number" id="mod" />
+                    </div>
+                </section>
+            </article>
+            <p id="dices_output">Your Dices</p>
+            <br />
+            <button onclick="roll_the_dice()">ROLL THE DICE</button>
+        </main>
         <footer>
             <p>©2021</p>
             <p>
