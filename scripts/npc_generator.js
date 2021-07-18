@@ -875,11 +875,18 @@ const character_adnd = (race, gender, job, level, min_attribute_value) => {
                 break;
             case 18:
                 hp += 4;
+                break;
+            case 19:
+                hp += 5;
+                break;
         }
 
         if (level > 1) {
             for (let i = 0; i < level - 1; i++) {
-                if (atributes[2] === 18) {
+                if (atributes[2] === 19) {
+                    const bonus_hp = dice_roll(2, 10) + 5;
+                    hp += bonus_hp;
+                } else if (atributes[2] === 18) {
                     const bonus_hp = dice_roll(2, 10) + 4;
                     hp += bonus_hp;
                 } else if (atributes[2] === 17) {
@@ -1143,8 +1150,6 @@ const character_adnd = (race, gender, job, level, min_attribute_value) => {
     return output;
 };
 
-console.log(character_adnd('elf', 'female', 'men at arms', 1, 8));
-
 function generate_character() {
     const race = document.querySelector('#race_list').value;
     const gender = document.querySelector('#gender_list').value;
@@ -1167,6 +1172,13 @@ function generate_character() {
     }
 
     if (system === 'adnd') {
+        if (level > 20) {
+            level = 20;
+        }
+        if (min_attribute_value > 18) {
+            min_attribute_value = 18;
+        }
+
         const character = character_adnd(race, gender, job, level, min_attribute_value);
 
         document.querySelector('#character_name').innerHTML = character.Name;
