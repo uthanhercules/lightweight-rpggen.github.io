@@ -1195,9 +1195,9 @@ function generate_character() {
         document.querySelector('#character_wis').innerHTML = String(character.Attributes.WIS);
         document.querySelector('#character_cha').innerHTML = String(character.Attributes.CHA);
 
-        document.querySelector('#character_age').innerHTML = String(character.About.Age);
-        document.querySelector('#character_height').innerHTML = String(character.About.Height);
-        document.querySelector('#character_weight').innerHTML = String(character.About.Weight);
+        document.querySelector('#character_age').innerHTML = `${character.About.Age}yo`;
+        document.querySelector('#character_height').innerHTML = `${character.About.Height}cm`;
+        document.querySelector('#character_weight').innerHTML = `${character.About.Weight}kg`;
         document.querySelector('#character_alignment').innerHTML = character.About.Alignment;
         document.querySelector('#character_appearance').innerHTML = character.About.Appearance;
         document.querySelector('#character_trait').innerHTML = character.About.Trait;
