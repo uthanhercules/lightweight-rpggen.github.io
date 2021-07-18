@@ -74,6 +74,7 @@ function roll_the_dice() {
 
     if (isNaN(mod)) {
         mod = 0;
+        output_mod = mod;
     }
     if (mod < 0) {
         signal = '-';
